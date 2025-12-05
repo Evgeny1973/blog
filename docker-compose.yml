@@ -24,7 +24,7 @@ services:
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: blog
+      MYSQL_DATABASE: mycms
       MYSQL_PASSWORD: root
       LC_ALL: C.UTF-8
     volumes:
