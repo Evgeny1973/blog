@@ -3,18 +3,38 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('{{ asset('assets/assets/img/home-bg.jpg') }}')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>Clean Blog</h1>
+                        <span class="subheading">Register for a new user</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
     {{ form_errors(registrationForm) }}
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.username) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
+    <div class="container px-4 px-lg-5">
+        {{ form_start(registrationForm) }}
+        <div class="form-outline mb-4">
+            {{ form_row(registrationForm.username, { 'attr': {'class': 'form-control' }}) }}
+        </div>
+        <div class="form-outline mb-4">
+            {{ form_row(registrationForm.email, { 'attr': {'class': 'form-control' }}) }}
+        </div>
+        <div class="form-outline mb-4">
+            {{ form_row(registrationForm.plainPassword, { 'attr': {'class': 'form-control' }}) }}
+        </div>
         {{ form_row(registrationForm.agreeTerms) }}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+        <!-- Submit button -->
+        <br>
+        <button type="submit" name="submit" class="btn btn-primary  mb-4 text-center">Register</button>
+        {{ form_end(registrationForm) }}
+    </div>
 {% endblock %}
