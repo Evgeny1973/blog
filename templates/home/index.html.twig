@@ -10,7 +10,9 @@
 
 <div class="example-wrapper">
     {% if app.user %}
-        Welcome, {{ app.user.username }}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ logout_path() }}">Logout</a>
+        </div>
     {% else %}
         <div class="mb-3">
             You are logged out
